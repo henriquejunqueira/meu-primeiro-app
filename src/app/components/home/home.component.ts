@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { EnviaFormularioService } from '../../services/envia-formulario.service';
 
 @Component({
@@ -17,6 +17,10 @@ export class HomeComponent {
   listItens = ['abacaxi', 'uva', 'maçã'];
   // listItens = [{ id: '1' }, { id: '2' }];
 
+  @Input('name') minhaPropsDeFora!: string;
+
+  @Output() emitindoValorName = new EventEmitter<string>();
+
   // atualizaBooleano(valor: boolean) {
   //   this.meuBooleano = valor;
   // }
@@ -26,6 +30,7 @@ export class HomeComponent {
   // }
 
   submit() {
+    this.emitindoValorName.emit(this.name);
     this.enviaFormularioService.enviaInformacaoParaBackend(
       'enviando informação'
     );
