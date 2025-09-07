@@ -6,3 +6,17 @@
 <!-- <button [attr.teste-do-video]="idButton"></button> -->
 <!-- <button (click)="submit()">Clique</button> -->
 <button (click)="submit($event)">Clique</button>
+
+@if(deveMostrarTitulo){
+<h1>Meu título</h1>
+} @else if(name == "Alice") {
+<h1>Meu título para Alice</h1>
+}@else {
+<h1>Não foi verdadeiro</h1>
+} @for(item of listItens; track item){
+<p>{{ item }}</p>
+}
+
+<!-- @for(item of listItens; track item.id){
+
+ } -->

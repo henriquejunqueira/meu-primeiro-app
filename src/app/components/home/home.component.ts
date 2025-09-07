@@ -10,6 +10,10 @@ export class HomeComponent {
   name = 'Alice';
   idButton = 'abcd';
   // meuBooleano = false;
+  deveMostrarTitulo = false;
+  // deveMostrarTitulo = true;
+  listItens = ['abacaxi', 'uva', 'maçã'];
+  // listItens = [{ id: '1' }, { id: '2' }];
 
   // atualizaBooleano(valor: boolean) {
   //   this.meuBooleano = valor;
