@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { EnviaFormularioService } from '../../services/envia-formulario.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+  private enviaFormularioService = inject(EnviaFormularioService);
   name = 'Alice';
   idButton = 'abcd';
   // meuBooleano = false;
@@ -23,7 +25,9 @@ export class HomeComponent {
   //   console.log('video');
   // }
 
-  submit(event: any) {
-    console.log(event);
+  submit() {
+    this.enviaFormularioService.enviaInformacaoParaBackend(
+      'enviando informação'
+    );
   }
 }
