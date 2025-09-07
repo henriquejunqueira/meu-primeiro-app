@@ -7,9 +7,19 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  meuBooleano = false;
+  name = 'Alice';
+  idButton = 'abcd';
+  // meuBooleano = false;
 
-  atualizaBooleano(valor: boolean) {
-    this.meuBooleano = valor;
+  // atualizaBooleano(valor: boolean) {
+  //   this.meuBooleano = valor;
+  // }
+
+  // submit() {
+  //   console.log('video');
+  // }
+
+  submit(event: any) {
+    console.log(event);
   }
 }
